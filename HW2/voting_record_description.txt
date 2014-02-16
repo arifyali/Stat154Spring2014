@@ -1,0 +1,11 @@
+U.S. House of Representatives Roll Call Votes 3-535
+109th Congress - 1st Sesssion 2005
+January 4, 2005 - October 20, 2005
+
+Data obtained from website for the Office of the Clerk, U.S. House of Representatives (http://clerk.house.gov).
+
+Each line of the data file corresponds to a single member of the House, appearing in the order specified in house_members.txt. Each line contains the (tab-deliminated) results for that member on roll calls 3-535: 1 for Yea, -1 for Nay, 0 for no vote.
+
+The first two roll calls were not included: Roll call 1 was a call of the House by States; roll call 2 was the election of the Speaker.
+
+reduced_house_party2005.txt contains the cleaned data, in which Representatives who missed more than 10% of the roll calls were removed. This results in 401 remaining Representatives.

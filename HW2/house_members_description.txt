@@ -1,0 +1,6 @@
+Members of the U.S. House of Representatives 
+109th Congress - 1st Sesssion 2005
+
+Data obtained from website for the Office of the Clerk, U.S. House of Representatives (http://clerk.house.gov).
+
+Each line of the data file corresponds to a single member of the House, and contains the following tab-deliminated information: unique ID, name, party affiliation, state. There are 535 members of the House, but this list contains only the 534 members that were present at the first roll call.
