@@ -1,0 +1,1044 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\headheight 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Homework 3
+\end_layout
+
+\begin_layout Author
+Arif Ali (SID: 21922601)
+\end_layout
+
+\begin_layout Author
+Section 1 (9:00am to 11:00am)
+\end_layout
+
+\begin_layout Part*
+Homework Summary
+\end_layout
+
+\begin_layout Section*
+Problem 1
+\end_layout
+
+\begin_layout Subsection*
+Part a
+\end_layout
+
+\begin_layout Subsubsection*
+For Linear Regression
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $\hat{f}(X)=X^{T}\beta\implies\hat{f}(x_{0})=x_{0}^{T}\beta=\sum\left(x_{0}^{T}\left(x_{0}^{T}x_{0}\right)^{-1}x_{0}^{T}\right)_{i}y_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $\therefore l(x_{0};X)=\left(x_{0}^{T}\left(x_{0}^{T}x_{0}\right)^{-1}x_{0}^{T}\right)_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+For K nearest Neighbor
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $\hat{f}(x)=\frac{1}{k}\sum y_{i}=\sum\frac{1}{k}*y_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $\therefore l(x_{0};X)=\frac{1}{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part b
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $E_{Y|X}(f(x_{0})-\hat{f}(x_{0}))^{2}=E_{Y|X}(f(x_{0})^{2}-2*f(x_{0})*\hat{f}(x_{0})+\hat{f}(x_{0})^{2})=f(x_{0})^{2}-2*f(x_{0})*E_{Y|X}(\hat{f}(x_{0}))+E_{Y|X}(\hat{f}(x_{0})^{2})=f(x_{0})^{2}-2*f(x_{0})*E_{Y|X}(\hat{f}(x_{0}))+E_{Y|X}(\hat{f}(x_{0})^{2})+\left[E_{Y|X}(\hat{f}(x_{0}))\right]^{2}-\left[E_{Y|X}(\hat{f}(x_{0}))\right]^{2}=f(x_{0})^{2}-2*f(x_{0})*E_{Y|X}(\hat{f}(x_{0}))+E_{Y|X}(\hat{f}(x_{0})^{2})+\left[E_{Y|X}(\hat{f}(x_{0}))\right]^{2}-\left[E_{Y|X}(\hat{f}(x_{0}))\right]^{2}=\left[f(x_{0})-E_{Y|X}(\hat{f}(x_{0}))\right]^{2}+E_{Y|X}(\hat{f}(x_{0})^{2})-\left[E_{Y|X}(\hat{f}(x_{0}))\right]^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part c
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E_{Y,X}(f(x_{0})-\hat{f}(x_{0}))^{2}=E_{Y,X}(f(x_{0})^{2}-2*f(x_{0})*\hat{f}(x_{0})+\hat{f}(x_{0})^{2})=f(x_{0})^{2}-2*f(x_{0})*E_{Y,X}(\hat{f}(x_{0}))+E_{Y,X}(\hat{f}(x_{0})^{2})=f(x_{0})^{2}-2*f(x_{0})*E_{Y,X}(\hat{f}(x_{0}))+E_{Y,X}(\hat{f}(x_{0})^{2})+\left[E_{Y,X}(\hat{f}(x_{0})\right]^{2}-\left[E_{Y,X}(\hat{f}(x_{0})\right]^{2}=f(x_{0})^{2}-2*f(x_{0})*E_{Y,X}(\hat{f}(x_{0}))+\left[E_{Y,X}(\hat{f}(x_{0})\right]^{2}+E_{Y,X}(\hat{f}(x_{0})^{2})-\left[E_{Y,X}(\hat{f}(x_{0})\right]^{2}=f(x_{0})^{2}-2*f(x_{0})*E_{Y,X}(\hat{f}(x_{0}))+E_{Y,X}(\hat{f}(x_{0})^{2})+\left[E_{Y,X}(\hat{f}(x_{0}))\right]^{2}-\left[E_{Y,X}(\hat{f}(x_{0}))\right]^{2}=\left[f(x_{0})-E_{Y,X}(\hat{f}(x_{0}))\right]^{2}+E_{Y,X}(\hat{f}(x_{0})^{2})-\left[E_{Y,X}(\hat{f}(x_{0}))\right]^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part d
+\end_layout
+
+\begin_layout Standard
+In Part b, the term is better written as 
+\begin_inset Formula $\left[f(x_{0})-E_{Y|X}(\hat{f}(x_{0}))\right]^{2}+E_{Y|X}(\hat{f}(x_{0})^{2})-\left[E_{Y|X}(\hat{f}(x_{0}))\right]^{2}=\left[f(x_{0})-E(l(x_{0};X)y_{i}|X=x)^{2})\right]^{2}+E((l(x_{0};X)y_{i}|X=x)^{2})-\left[E(l(x_{0};X)y_{i}|X=x)\right]^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left[f(x_{0})-E_{Y,X}(\hat{f}(x_{0}))/E_{X}(\hat{f}(x_{0}))\right]^{2}+E_{Y,X}(\hat{f}(x_{0})^{2})/E_{X}(\hat{f}(x_{0})^{2})-\left[E_{Y,X}(\hat{f}(x_{0}))/E_{X}(\hat{f}(x_{0}))\right]^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 2
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $accuracy=(1-error)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear Regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1-nn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3-nn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5-nn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7-nn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15-nn
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Training 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9942405
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9949604
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9942405
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9935205
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9906407
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9587912
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9752747
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9752747
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9697802
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.967033
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9615385
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+With regards, to training, the first and thrid nearest neighbor methods
+ have a higher accuracy, thereby, a lower error rate, than the Linear Regression.
+ This could be due to the number of neighbors being analyzed as a lower
+ number when compared to the Linear Regression method which takes into account
+ the entire set.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The Linear Regression method has a lower accuracy, higher error, compared
+ to all the K-nn
+\end_layout
+
+\begin_layout Section*
+Problem 3
+\end_layout
+
+\begin_layout Subsection*
+Part 1
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+I generated an X vector with a length of 30 by assuming 
+\series default
+
+\begin_inset Formula $N\sim(0,1)$
+\end_inset
+
+ 
+\series medium
+and created a three degree polynomial 
+\begin_inset Formula $y=3*x^{3}+2*x^{2}+x$
+\end_inset
+
+.
+ Following this, I created a Linear Model assuming that Y was the response
+ variable.
+ Using this model, I used the predict
+\series default
+ 
+\series medium
+function in order find the Standard error for each point.
+ I created the 95% confidence interval, in blue on the plot, for each point
+ by multiplying the SE by 1.96 and adding then substracting from the predicted
+ value.
+ 27 of the 30 points were found to be inside this confidence interval, I'm
+ assuming that since the number wasn't large enough, 2 to 3 points outside
+ the interval was acceptable.
+\end_layout
+
+\begin_layout Subsection*
+Part II
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C_{\beta}=\left\{ \beta|(\hat{\beta}-\beta)^{T}X^{T}X*(\hat{\beta}-\beta)\leq\hat{\sigma}^{2}X_{p+1}^{2(1-\alpha)}\right\} \approx X_{3+1}^{2(1-0.025)}\hat{\sigma}^{2}=12.8325*\hat{\sigma^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The method in Part II would be larger, because of the Chi-square value determine
+d 
+\begin_inset Formula $12.8325>1.96$
+\end_inset
+
+, this is highlighted in green.
+ 
+\end_layout
+
+\begin_layout Section*
+Problem 4
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+assume 
+\begin_inset Formula $X'=X+\sqrt{\lambda}I_{p}\implies X'^{T}X'=(X,\sqrt{\lambda}I_{p})^{T}(X,\sqrt{\lambda}I_{p})=X^{T}X+\lambda I_{p}$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+\begin_inset Formula $\hat{\beta}_{ridge}=\left(X^{T}X+\lambda I_{p}\right)^{-1}X^{T}Y$
+\end_inset
+
+ and 
+\begin_inset Formula $Y^{'}=\left(Y,0_{p}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph*
+
+\series medium
+\begin_inset Formula $\hat{\beta}=\left(X^{T}X\right)^{-1}X^{T}Y=\left(X^{T}X+\lambda I_{p}\right)^{-1}(X,\sqrt{\lambda})^{T}Y^{'}$
+\end_inset
+
+ and 
+\begin_inset Formula $(X,\sqrt{\lambda}I)^{T}Y^{'}=X^{T}Y+0_{p}*\sqrt{\lambda}I_{p}=X^{T}Y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph*
+
+\series medium
+thus, 
+\series default
+
+\begin_inset Formula $\hat{\beta}=\left(X^{T}X\right)^{-1}X^{T}Y=\left(X^{T}X+\lambda I_{p}\right)^{-1}(X)^{T}Y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph*
+
+\series medium
+\begin_inset Formula $\therefore$
+\end_inset
+
+ Since 
+\begin_inset Formula $\hat{\beta}=\hat{\beta}_{ridge}$
+\end_inset
+
+, ridge regression estimates can be obtained by ordinary least squares regressio
+n on an augmented data set.
+\end_layout
+
+\begin_layout Section*
+Problem 5
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+When first analyzing the the Brains Weight Data, I constructed a Linear
+ Model with all the data to look for any outlying points.
+ The Brain Weight was used as the response variable, while body weight was
+ used as the exploratory variable.
+ Based on the cook's distance, I identified three species that could affect
+ the building of the model, African Elephant, Human, and Asian Elephant.
+ Human had a cook's distance that was close to 0.5 and was not an outlier
+ yet was still considered affecting data, while both Elephant points were
+ greater than one, concluding that they were outliers.
+ This conclusion was also confirmed by looking at a Normal Q-Q plot.
+ Had these three points not been eliminated, the regression line would have
+ been 
+\begin_inset Formula $Brain.Weight=0.9665*Body.Weight+91.0086$
+\end_inset
+
+
+\series bold
+.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+After eliminating the three outliers, three additional points were found
+ to be influencing the new Linear Model; however only one, cow, was considered
+ an outlier because it's cook's distance was greater than or equal to 1.
+ The Regression line for this model was 
+\begin_inset Formula $Brain.Weight=1.228*Body.Weight+36.573$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Part*
+Appendix
+\end_layout
+
+\begin_layout Section*
+Graphs
+\end_layout
+
+\begin_layout Subsection*
+Problem 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 3.1.jpeg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Problem 5
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 5.0.1.jpeg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 5.0.jpeg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename p5.1.1.jpeg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename p5.1.jpeg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+setwd("Dropbox/School/Statistics/Stat 154 Spring 2014/HW3") 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#############Problem 2############# 
+\end_layout
+
+\begin_layout Plain Layout
+
+ZipTrain = read.table(file="zip.train", header=F) 
+\end_layout
+
+\begin_layout Plain Layout
+
+ZipTest = read.table('zip.test', header=F) 
+\end_layout
+
+\begin_layout Plain Layout
+
+ZipTrain = ZipTrain[ZipTrain$V1== 2 | ZipTrain$V1== 3, ] 
+\end_layout
+
+\begin_layout Plain Layout
+
+ZipTest = ZipTest[ZipTest$V1== 2 | ZipTest$V1== 3, ] 
+\end_layout
+
+\begin_layout Plain Layout
+
+ZipTrain = na.omit(ZipTrain) 
+\end_layout
+
+\begin_layout Plain Layout
+
+Problem2 = glm(V1~., data=ZipTrain) summary(Problem2)$coefficients[,1]#errors
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+error.for.test = function(ZipTest){Testing = t(ZipTest[, -1])            
+                        
+\end_layout
+
+\begin_layout Plain Layout
+
+print(dim(Testing))                                    
+\end_layout
+
+\begin_layout Plain Layout
+
+Test.yhat = c()                                    
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:ncol(Testing)){                                      
+\end_layout
+
+\begin_layout Plain Layout
+
+Test.yhat[i] = Problem2$coefficients[1]+sum(Problem2$coefficients[-1]*(Testing[,i
+]))}                                    
+\end_layout
+
+\begin_layout Plain Layout
+
+Test.yhat = round(Test.yhat)                                    
+\end_layout
+
+\begin_layout Plain Layout
+
+Test.error = mean(ZipTest$V1-Test.yhat)^2 return(Test.error)} 
+\end_layout
+
+\begin_layout Plain Layout
+
+error.for.test(ZipTrain) 
+\end_layout
+
+\begin_layout Plain Layout
+
+error.for.test(ZipTest) 
+\end_layout
+
+\begin_layout Plain Layout
+
+library("FNN") k.error.train.test = function(k){ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Train.error.k = sum(ZipTrain$V1-knn(ZipTrain[,-1], ZipTrain[, -1], ZipTrain$V1,
+ k =k))/length(ZipTrain$V1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+Test.error.k = sum(ZipTest$V1-knn(ZipTrain[,-1], ZipTest[, -1], ZipTrain$V1,
+ k =k))/length(ZipTest$V1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+return(data.frame(Train.error.k, Test.error.k)) } 
+\end_layout
+
+\begin_layout Plain Layout
+
+k.error.train.test(1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+k.error.train.test(3)
+\end_layout
+
+\begin_layout Plain Layout
+
+k.error.train.test(5) 
+\end_layout
+
+\begin_layout Plain Layout
+
+k.error.train.test(7) 
+\end_layout
+
+\begin_layout Plain Layout
+
+k.error.train.test(15)
+\end_layout
+
+\begin_layout Plain Layout
+
+#############Problem 3############# 
+\end_layout
+
+\begin_layout Plain Layout
+
+X = rnorm(30, 0,1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+Y = 0 + 1*X + 2*X^2 + 3*X^3 + rnorm(30, 0, 1) X.lm = lm(Y~1+X+I(X^2)+I(X^3))
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+X.lm 
+\end_layout
+
+\begin_layout Plain Layout
+
+#  Coefficients: 
+\end_layout
+
+\begin_layout Plain Layout
+
+# (Intercept)            X       I(X^2)       I(X^3)  
+\end_layout
+
+\begin_layout Plain Layout
+
+#      51.421       -1.154        2.030        3.000
+\end_layout
+
+\begin_layout Plain Layout
+
+X.Sum.lm = summary(X.lm) X.Sum.lm 
+\end_layout
+
+\begin_layout Plain Layout
+
+# Call: 
+\end_layout
+
+\begin_layout Plain Layout
+
+#   lm(formula = Y ~ 1 + X + I(X^2) + I(X^3)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+#  
+\end_layout
+
+\begin_layout Plain Layout
+
+# Residuals: 
+\end_layout
+
+\begin_layout Plain Layout
+
+#   Min      1Q  Median      3Q     Max  
+\end_layout
+
+\begin_layout Plain Layout
+
+# -1.6499 -0.4746 -0.1368  0.5540  1.3134  
+\end_layout
+
+\begin_layout Plain Layout
+
+#  
+\end_layout
+
+\begin_layout Plain Layout
+
+# Coefficients: 
+\end_layout
+
+\begin_layout Plain Layout
+
+#   Estimate Std.
+ Error t value Pr(>|t|)     
+\end_layout
+
+\begin_layout Plain Layout
+
+# (Intercept)  0.06983    0.15975   0.437  0.66561     
+\end_layout
+
+\begin_layout Plain Layout
+
+# X            0.87570    0.28053   3.122  0.00437 **  
+\end_layout
+
+\begin_layout Plain Layout
+
+#   I(X^2)       2.15108    0.11686  18.407  < 2e-16 *** 
+\end_layout
+
+\begin_layout Plain Layout
+
+#   I(X^3)       2.98545    0.08381  35.620  < 2e-16 *** 
+\end_layout
+
+\begin_layout Plain Layout
+
+#   --- 
+\end_layout
+
+\begin_layout Plain Layout
+
+#   Signif.
+ codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+\end_layout
+
+\begin_layout Plain Layout
+
+#  
+\end_layout
+
+\begin_layout Plain Layout
+
+# Residual standard error: 0.7275 on 26 degrees of freedom 
+\end_layout
+
+\begin_layout Plain Layout
+
+# Multiple R-squared:  0.9953,  Adjusted R-squared:  0.9947  
+\end_layout
+
+\begin_layout Plain Layout
+
+# F-statistic:  1820 on 3 and 26 DF,  p-value: < 2.2e-16 
+\end_layout
+
+\begin_layout Plain Layout
+
+errors = X.Sum.lm$coefficients[,1] 
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(X, Y, pch = 20) 
+\end_layout
+
+\begin_layout Plain Layout
+
+y = X^3*X.lm$coefficients[4] + X^2*X.lm$coefficients[3] + 
+\end_layout
+
+\begin_layout Plain Layout
+
+(X)*X.lm$coefficients[2] + 1*X.lm$coefficients[1] 
+\end_layout
+
+\begin_layout Plain Layout
+
+X.x = X[order(X)] 
+\end_layout
+
+\begin_layout Plain Layout
+
+y = y[order(X)] points(X.x, y, type="l", col = "red")
+\end_layout
+
+\begin_layout Plain Layout
+
+CI.X.lm = predict(X.lm, data.frame(X.x,y), interval="confidence") 
+\end_layout
+
+\begin_layout Plain Layout
+
+upper.CI=1.96*(CI.X.lm[,3]-CI.X.lm[,1])+CI.X.lm[,1] 
+\end_layout
+
+\begin_layout Plain Layout
+
+lower.CI=1.96*(CI.X.lm[,2]-CI.X.lm[,1])+CI.X.lm[,1] 
+\end_layout
+
+\begin_layout Plain Layout
+
+points(X.x, upper.CI[order(X)],type="l", col = "blue") 
+\end_layout
+
+\begin_layout Plain Layout
+
+points(X.x, lower.CI[order(X)],type="l", col = "blue")
+\end_layout
+
+\begin_layout Plain Layout
+
+upper.CI = qchisq(1-0.025, 5)*(CI.X.lm[,3]-CI.X.lm[,1]) + CI.X.lm[,1] 
+\end_layout
+
+\begin_layout Plain Layout
+
+lower.CI = qchisq(1-0.025, 5)*(CI.X.lm[,2]-CI.X.lm[,1]) + CI.X.lm[,1] 
+\end_layout
+
+\begin_layout Plain Layout
+
+points(X.x, upper.CI[order(X)],type="l", col = "green") 
+\end_layout
+
+\begin_layout Plain Layout
+
+points(X.x, lower.CI[order(X)],type="l", col = "green")
+\end_layout
+
+\begin_layout Plain Layout
+
+#############Problem 5############# 
+\end_layout
+
+\begin_layout Plain Layout
+
+brains = read.csv("brains.csv") 
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(brains$BrainWt, brains$BodyWt) 
+\end_layout
+
+\begin_layout Plain Layout
+
+brains.lm = lm(brains$BrainWt~brains$BodyWt) plot(brains.lm)
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(brains$BrainWt[-c(33,32,19)], 
+\end_layout
+
+\begin_layout Plain Layout
+
+brains$BodyWt[-c(33,32,19)]) 
+\end_layout
+
+\begin_layout Plain Layout
+
+brains.lm = lm(brains$BrainWt[-c(33,32,19)]~brains$BodyWt[-c(33,32,19)])
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(brains.lm) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

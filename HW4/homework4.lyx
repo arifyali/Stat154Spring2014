@@ -1,0 +1,374 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\headheight 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Problem 1
+\end_layout
+
+\begin_layout Subsection*
+Part I
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+In order to construct the portfolio, I created a generalized linear model
+ with Lasso, where the companies that had a span of 1342 days on the stock
+ market.
+ Using the PRC data for these subset of companies, I constructed the generalized
+ linear model using the SP 500 level as the response variable.
+ In order to contruct the porfolio, I decided that the best number of different
+ stocks to realistically have was 20, so I looked for lambda's with the
+ length closest to 20 and used that lambda the get the coefficients of each
+ company.
+ I omitted any company with the coefficient of 0.
+ These were the following companies: "AMERICAN_ELECTRIC_POWER_CO_INC", "AMERIPRI
+SE_FINANCIAL_INC", "AUTODESK_INC", "BOEING_CO", "CAPITAL_ONE_FINANCIAL_CORP",
+ "CINCINNATI_FINANCIAL_CORP", "DENTSPLY_INTERNATIONAL_INC_NEW", "HARLEY_DAVIDSON
+_INC","HONEYWELL_INTERNATIONAL_INC","ILLINOIS_TOOL_WORKS_INC","INTERNATIONAL_PAP
+ER_CO", "MACERICH_CO","MOLEX_INC","NEWELL_RUBBERMAID_INC", "NEWS_CORP",
+ "OMNICOM_GROUP_INC
+\begin_inset Quotes erd
+\end_inset
+
+, "PATTERSON_COMPANIES_INC", "TOTAL_SYSTEM_SERVICES_INC", and "WILLIAMS_COS"
+\end_layout
+
+\begin_layout Subsection*
+Part II
+\end_layout
+
+\begin_layout Standard
+The changing portfolios are not very stable, when comparing a following
+ 60 day designed portfolio with the previous, the maximum number of stocks
+ that are retained are 5 given that the portfolio being searched for are
+ the ones closest to 20 different stocks.
+ This occurs only twice out of the the 22 60-day intervals.
+ Adding Penalties of lower valued coefficients to the newer companies may
+ help to lower the amount of chnages
+\end_layout
+
+\begin_layout Subsection*
+Part III
+\end_layout
+
+\begin_layout Standard
+The difference in issue will be the way that PRC is accounted for.
+ Instead of taking the absolute value, we will impose a subset of the SP
+ data, such that all PRC values that are not greater than 0
+\end_layout
+
+\begin_layout Subsection*
+Part IV
+\end_layout
+
+\begin_layout Subsubsection*
+Part I
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+When I switched to the DailyReturns, the following companies were picked:"A_E_S_
+CORP","AMERISOURCEBERGEN_CORP","APOLLO_GROUP_INC", "BAKER_HUGHES_INC""CAPITAL_ON
+E_FINANCIAL_CORP","CH_ROBINSON_WORLDWIDE_INC","COACH_INC","DU_PONT_E_I_DE_NEMOUR
+S___CO","FLIR_SYSTEMS_INC","INTERPUBLIC_GROUP_COS_INC", "K_L_A_TENCOR_CORP
+\begin_inset Quotes erd
+\end_inset
+
+,"MARRIOTT_INTERNATIONAL_INC_NEW", "MASTERCARD_INC", "MCKESSON_H_B_O_C_INC",
+ "NABORS_INDUSTRIES_LTD", "PRICELINE_COM_INC", "SAFEWAY_INC","SNAP_ON_INC"
+ "SPRINT_NEXTEL_CORP","WESTERN_UNION_CO".
+ The difference was the construction of the text matrix, which was changed
+ to DailyReturns from PRC.
+\end_layout
+
+\begin_layout Subsubsection*
+Part II
+\end_layout
+
+\begin_layout Standard
+The changing portfolios still are not very stable, when comparing a following
+ 60 day designed portfolio with the previous, the maximum number of stocks
+ that are retained are 4 instead of 5 given that the portfolio being searched
+ for are the ones closest to 20 different stocks.
+ This also occurs only twice out of the the 22 60-day intervals.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Part V
+\end_layout
+
+\begin_layout Standard
+In order to do this part the ideal situation I attempted was to create a
+ standard generalized linear model using Biblo, Askhi, DailyReturns, VOL,
+ OPENPRC, and Numtrd to predict the SP Level.
+ Then using the Predict SP 500 level for each stock, i would impliment another
+ 
+\series medium
+generalized linear model with Lasso.
+ I wouldlook for lambda's with the length closest to 20 (see 1a for my explanati
+on) and used that lambda the get the coefficients of each company.
+ Those companies would be part of my stock portfolio.
+\end_layout
+
+\begin_layout Section*
+Problem 2
+\end_layout
+
+\begin_layout Subsection*
+Part A
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\delta_{2}(x)=x^{T}\sum^{-1}\mu_{2}-\frac{1}{2}x_{2}^{T}\sum\mu_{2}+log(\pi_{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\delta_{1}(x)=x^{T}\sum^{-1}\mu_{1}-\frac{1}{2}x_{1}^{T}\sum\mu_{1}+log(\pi_{1})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assume 
+\begin_inset Formula $\delta_{2}(x)>\delta_{1}(x)$
+\end_inset
+
+ if LDA rule classifies to class 2
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x^{T}\sum^{-1}\mu_{2}-\frac{1}{2}x_{2}^{T}\sum\mu_{2}+log(\pi_{2})>x^{T}\sum^{-1}\mu_{1}-\frac{1}{2}x_{1}^{T}\sum\mu_{1}+log(\pi_{1})\implies x^{T}\sum^{-1}(\mu_{1}-\mu_{2})>\frac{1}{2}x_{2}^{T}\sum\mu_{2}-log(\pi_{2})-\frac{1}{2}x_{1}^{T}\sum\mu_{1}+log(\pi_{1})\implies x^{T}\sum^{-1}(\mu_{1}-\mu_{2})>\frac{1}{2}x_{2}^{T}\sum\mu_{2}-log(\frac{N_{2}}{N})-\frac{1}{2}x_{1}^{T}\sum\mu_{1}+log(\frac{N_{1}}{N})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part B
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sum_{i=1}^{N}(y_{i}-\beta_{0}-\beta^{T}X)^{2}\implies RSS=(Y-\beta_{0}-X\beta)^{T}(Y-\beta_{0}-X\beta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part C
+\end_layout
+
+\begin_layout Standard
+Given: 
+\begin_inset Formula $\mathbf{\hat{\sum_{\beta}}=(\mu_{2}\text{−}\mu_{1})(\mu_{2}\text{−}\mu_{1})^{T}}\implies\mathbf{\hat{\sum_{\beta}\hat{\beta}}=(\mu_{2}\text{−}\mu_{1})(\mu_{2}\text{−}\mu_{1})^{T}\hat{\beta}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Accurracy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Training
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LDA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.7533333$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.6851852$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Logistic Regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.75$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.691358$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+In order to analyze the data, I used the variables discussed in section
+ to determine which factors to use.
+ If I had attempted it, I would have used variable selection to determine
+ the appropriate variables.
+ Thus, the variables I use were the following, "tobacco", "ldl", "famhist",
+ "age" to determine chd.
+ The training and test set were created by randomly selecting 300 observations
+ and the remaining 162 observations were placed in the test set.
+ In order to determine the goodness of the classifers, I used the accurracy.
+ Based on the accurracy of both the LDA and Logistic Regression, the Logistic
+ Regression seems to be a better classifier.
+\end_layout
+
+\end_body
+\end_document
